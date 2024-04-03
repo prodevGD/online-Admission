@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Admission Application Form</title>
+    <link rel="stylesheet" href="./public/stylesheets/applicant.css">
+</head>
+
+<body>
+    <section class="applicant-form">
+        <h1>College Admission Applicant Form</h1>
+        <form action="/submit" method="post" id="applicantForm">
+            <!-- Applicant Form Fields -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mobile">Mobile:</label>
+            <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}">
+
+            <label for="adhar">Adhar Card:</label>
+            <input type="text" id="adhar" name="adhar" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <label for="cetScore">CET Score:</label>
+            <input type="number" id="cetScore" name="cetScore" required>
+
+            <!-- Branch Selection Section -->
+            <label for="branch">Preferred Branch:</label>
+            <input type="text" id="branch" name="branch" placeholder="Enter your preferred branch" required>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the form elements
+            var applicantForm = document.getElementById('applicantForm');
+
+            // Add an event listener for the form submission
+            applicantForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent the default form submission
+                // copied below line 
+                window.location.href = '/courses';
+                // Fetch the form data
+                var formData = new FormData(applicantForm);
+
+                // Convert FormData to JSON (for debugging purposes)
+                var formDataObject = {};
+                formData.forEach(function (value, key) {
+                    formDataObject[key] = value;
+                });
+
+                console.log(formDataObject); // Log the form data for debugging
+
+                // Send the form data to the server using fetch API
+                fetch('/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formDataObject),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Redirect to index.html or any other page
+                        window.location.href = '/courses';
+                    })
+                    .catch(error => console.error('Error:', error));
+            });
+        });
+    </script>
+
+</body>
+
+</html>

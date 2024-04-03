@@ -1,0 +1,44 @@
+<!-- request_hostel.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Users</title>
+    <link rel="stylesheet" href="../public/stylesheets/request_hostel.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registered Users</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Rooms Needed</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% regUsers.forEach((user) => { %>
+                    <tr>
+                        <td><%= user.id %></td>
+                        <td><%= user.name %></td>
+                        <td><%= user.mail %></td>
+                        <td><%= user.mob %></td>
+                        <td><%= user.rooms_needed %></td>
+                        <td>
+                            <form action="/deleteUser" method="post">
+                                <input type="hidden" name="userId" value="<%= user.id %>">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!-- carrent.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rentals</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        div.container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        li:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        strong {
+            color: #007BFF;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Car Rentals</h1>
+        <ul>
+            <% carrents.forEach((carrent) => { %>
+                <li>
+                    <strong>ID:</strong> <%= carrent.id %><br>
+                    <strong>Owner Name:</strong> <%= carrent.owner_name %><br>
+                    <strong>Cost of Car:</strong> <%= carrent.cost %><br>
+                    <strong>Destination:</strong> <%= carrent.destination %><br>
+                    <button onclick="reserveCar('<%= carrent.id %>')">Reserve Now</button>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+
+    <script>
+        function reserveCar(carId) {
+            // Redirect to the '/car_reg' route when the button is clicked
+            window.location.href = '/car_reg';
+        }
+    </script>
+</body>
+</html>

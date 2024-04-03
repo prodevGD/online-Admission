@@ -1,0 +1,88 @@
+<!-- places.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Places List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        div {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #3498db;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+        }
+
+        li strong {
+            color: #e74c3c;
+        }
+
+        /* Beautify the button */
+        button.view-on-map {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button.view-on-map:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Places Near College</h1>
+        <ul>
+            <% placess.forEach((places) => { %>
+                <li>
+                    <button class="view-on-map" onclick="window.location.href='https://www.google.com/maps/place/<%= encodeURIComponent('Visava Garden Jurassic Park') %>/@<%= places.latitude %>,<%= places.longitude %>,17z/data=!3m1!4b1!4m6!3m5!1s<%= encodeURIComponent(places.pincode) %>:0x25dfb0c23d595663!8m2!3d<%= places.latitude %>!4d<%= places.longitude %>!16s%2Fg%2F11c1xgmfjg?entry=ttu'">
+                        View on Map
+                    </button>
+                    
+
+                    <strong>PIN:</strong> <%= places.pincode %><br>
+                    <strong>Name of Place:</strong> <%= places.Name_of_places %><br>
+                    <strong>Nearest to (Treadmark):</strong> <%= places.Near_to %><br>
+                    <strong>Distance from College:</strong> <%= places.Dist_from_college %> km
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+</body>
+</html>

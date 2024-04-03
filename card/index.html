@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .card {
+      width: 300px;
+      padding: 20px;
+      margin: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      text-align: center;
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .card h2 {
+      color: #333;
+    }
+
+    .card p {
+      color: #777;
+    }
+
+    .hostel { background-color: #ffcccb; }
+    .places { background-color: #bfeeb7; }
+    .car-rent { background-color: #c2e3f6; }
+    .admission { background-color: #ffd966; }
+
+    /* Hover effect */
+    .card:hover {
+      transform: scale(1.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .card button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .card button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card hostel">
+    <img src="https://rohitkuwar.github.io/sukhmanihostel.github.io/css/images/building.jpg" alt="Hostel Image">
+    <h2>Hostel</h2>
+    <p>Find a comfortable place to stay.</p>
+    <button onclick="window.location.href = '/hostel' ">Visit</button>
+  </div>
+
+  <div class="card places">
+    <img src="https://www.tourmyindia.com/blog//wp-content/uploads/2014/12/Patna-Sahib-Image.jpg" alt="Places Image">
+    <h2>Places</h2>
+    <p>Discover amazing destinations.</p>
+    <button onclick="window.location.href='/places'">Visit</button>
+  </div>
+
+  <div class="card car-rent">
+    <img src="https://images.jdmagicbox.com/comp/def_content/car-hire-for-pune/shutterstock-229440439-car-hire-for-pune-6-mxilv.jpg?clr=#2b3b2b" alt="Car Rent Image">
+    <h2>Car Rent</h2>
+    <p>Rent a car for your journey.</p>
+    <button onclick="window.location.href='/carrent'">Visit</button>
+  </div>
+
+  <div class="card admission">
+    <img src="https://data.testprepkart.com/university/Shri_Guru_Gobind_Singhji_Institute_Of_Engineering_And_Technology_Nanded61682e95e62b5Shrigurugobind-1.jpg" alt="Admission Image">
+    <h2>Admission</h2>
+    <p>Apply for your dream school.</p>
+    <button onclick="window.location.href='/admission'">Visit</button>
+  </div>
+<script src="./public/javascripts/index.js"></script>
+</body>
+</html>

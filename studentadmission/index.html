@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: url('https://img.freepik.com/free-photo/fantastic-wonderland-forest-landscape-with-mushrooms-flowers-ai-generative_157027-1748.jpg?w=1380&t=st=1701440961~exp=1701441561~hmac=55ec195b5e8d62394970486555e2d51dfa647f65eb831e5fffc5cdc8b8154188') center/cover no-repeat fixed; /* Replace 'your-background-image.jpg' with your image URL */
+    }
+
+    .card {
+      width: 200px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      margin: 10px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-around;
+      order: 1;
+    }
+
+    .bottom-row {
+      display: flex;
+      justify-content: space-around;
+      order: 3;
+    }
+
+    .applicant{ 
+      background-color: #66cdaa; 
+      color: #fff; 
+    }
+    .courses{
+        background-color: aqua;
+        color: #fff;
+    }
+    .payment {
+        background-color: lightsalmon;
+        color: #fff;
+    }
+
+    .application { 
+      background-color: #ffb6c1; 
+      color: #fff; 
+    }
+    .admin{
+        background-color: tan;
+        color: #fff;
+    }
+    .card {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-row">
+    <div class="card applicant">
+      <h2>Applicant</h2>
+      <p>Enter your details</p>
+    </div>
+
+    <div class="card courses">
+      <h2>Courses</h2>
+      <p>Select Branch</p>
+    </div>
+
+    <div class="card payment">
+      <h2>Payment</h2>
+      <p>Make Payment</p>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="card application">
+      <h2>Application</h2>
+      <p>Submit your application </p>
+    </div>
+
+    <div class="card admin">
+      <h2>Admin</h2>
+      <p>Admin has access only</p>
+    </div>
+  </div>
+  <script src="./public/javascript/index.js" defer></script>
+</body>
+</html>

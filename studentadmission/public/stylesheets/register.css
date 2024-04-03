@@ -1,0 +1,52 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://img.freepik.com/premium-photo/abstract-rainbow-colorful-bright-feather-closeup-up-macro-view-background-plumage-texture-with-dew-drops_753134-644.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: transparent;
+    padding: 15px; /* Further decrease padding for a smaller box */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 70%; /* Adjust width as needed */
+    max-width: 300px; /* Further reduce maximum width for responsiveness */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 6px; /* Slightly reduce margin for a more compact form */
+    font-weight: bold;
+}
+
+input,
+textarea {
+    padding: 8px; /* Further decrease padding for smaller input fields */
+    margin-bottom: 10px; /* Further reduce margin for a more compact form */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 8px; /* Further decrease padding for a smaller button */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

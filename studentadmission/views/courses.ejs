@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branch Selection</title>
+    <link rel="stylesheet" href="./public/stylesheets/courses.css">
+</head>
+<body>
+    <section class="branch-selection">
+        <h1>Select Your Preferred Branch</h1>
+        <form action="/submit" method="post">
+            <label for="cse">
+                <input type="radio" id="cse" name="branch" value="cse">
+                Computer Science and Engineering
+            </label>
+
+            <label for="it">
+                <input type="radio" id="it" name="branch" value="it">
+                Information Technology
+            </label>
+
+            <label for="entc">
+                <input type="radio" id="entc" name="branch" value="entc">
+                Electronics and Telecommunication
+            </label>
+
+            <label for="electrical">
+                <input type="radio" id="electrical" name="branch" value="electrical">
+                Electrical Engineering
+            </label>
+
+            <label for="instrument">
+                <input type="radio" id="instrument" name="branch" value="instrument">
+                Instrumentation Engineering
+            </label>
+
+            <label for="textile">
+                <input type="radio" id="textile" name="branch" value="textile">
+                Textile Engineering
+            </label>
+
+            <label for="production">
+                <input type="radio" id="production" name="branch" value="production">
+                Production Engineering
+            </label>
+
+            <label for="mechanical">
+                <input type="radio" id="mechanical" name="branch" value="mechanical">
+                Mechanical Engineering
+            </label>
+
+            <label for="chemical">
+                <input type="radio" id="chemical" name="branch" value="chemical">
+                Chemical Engineering
+            </label>
+
+            <button type="button" onclick="redirectToPayment()">Continue</button>        </form>
+    </section>
+    <script src="../public/javascripts/courses.js"></script>
+</body>
+</html>

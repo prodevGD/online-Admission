@@ -1,0 +1,18 @@
+<!-- hostel.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <% admissionss.forEach((admission) => { %>
+                <li>College mail: <%= admission.collge_mail %>, CET Score: <%= admission.cet_score %>, Branch: <%= admission.branch %>, Contact: <%= admission.contact %></li>
+            <% }); %>
+        </ul>
+    </div>
+</body>
+</html>

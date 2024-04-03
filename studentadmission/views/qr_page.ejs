@@ -1,0 +1,72 @@
+<!-- qr_page.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment QR Code</title>
+  <link rel="stylesheet" href="./public/stylesheets/qr_page.css">
+  <style>
+    body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .qr-page-container {
+      padding: 20px;
+    }
+
+    .qr-page-container h1 {
+      font-size: 24px;
+    }
+
+    .countdown {
+      margin-bottom: 15px;
+    }
+
+    .qr-code img {
+      width: 300px; /* Adjust the width to your desired size */
+      height: auto; /* Maintain aspect ratio */
+    }
+
+    .qr-page-container button {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .qr-page-container button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="qr-page-container">
+    <h1>Payment Successful!</h1>
+    
+    <div class="countdown" id="countdown">Time remaining: 5:00</div>
+    
+    <div class="qr-code">
+      <!-- Stylized QR code will be displayed here -->
+      <img src="./public/images/qr.jpeg" alt="QR Code">
+    </div>
+
+    <button onclick="gotoApplicationForm()">Go to Application Form</button>
+  </div>
+
+  <script src="./public/javascripts/qr_page.js"></script>
+
+  <script>
+    function gotoApplicationForm() {
+      // Redirect to the application form page
+      window.location.href = '/application';
+    }
+  </script>
+</body>
+</html>

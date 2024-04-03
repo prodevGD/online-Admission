@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Registration</title>
+    <link rel="stylesheet" href="./public/stylesheets/reg.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-left: 10px;
+        }
+
+        .title-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .registration-form {
+            text-align: center;
+            margin: 20px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #3498db;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .admin-button-container {
+            text-align: center;
+            margin-top: -10px; /* Adjusted margin to move it slightly above */
+        }
+
+        .admin-button {
+            padding: 10px;
+            background-color: #27ae60;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="./public/images/logo.jpeg" alt="College Logo">
+        </div>
+        <div class="title-container">
+            <h1>Online Admission Portal</h1>
+            <p>Join our academic community!</p>
+        </div>
+    </header>
+
+    <section class="registration-form">
+        <h2>Online Registration Form</h2>
+        <form action="/register" method="post">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">College Email:</label>
+            <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@college\.edu$" title="Please use a valid college email address">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required minlength="8">
+
+            <button type="submit">Register Now</button>
+        </form>
+    </section>
+
+    <!-- Admin button slightly above the registration form -->
+    <div class="admin-button-container">
+        <button class="admin-button" onclick="location.href='/admin_login'">Admin</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 College Registration Portal. All rights reserved. By GD Gourav Wahane!</p>
+    </footer>
+
+    <!-- Script for form submission -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.querySelector('form');
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                window.location.href = '/applicant';
+            });
+        });
+    </script>
+</body>
+
+</html>

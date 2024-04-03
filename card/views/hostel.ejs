@@ -1,0 +1,106 @@
+<!-- hostel.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Information</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            width: 20%;
+            margin-bottom: 20px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 20px;
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            font-size: 14px;
+            color: #555;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Styles for the "Book Now" button */
+        .book-now-button {
+            margin-top: 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .book-now-button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Hostel Information
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Rooms Available</th>
+                <th>Vacant Seats</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% hostels.forEach((hostel) => { %>
+                <tr>
+                    <td><%= hostel.id %></td>
+                    <td><%= hostel.Name %></td>
+                    <td><%= hostel.Rooms_available %></td>
+                    <td><%= hostel.vacant_seats %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <!-- "Book Now" button linked to '/reg_users' -->
+    <button class="book-now-button" onclick="redirectToRegUsers()">Book Now</button>
+    <script>
+        function redirectToRegUsers() {
+            window.location.href = '/register';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!-- login.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            animation: fadeIn 1s ease, slideIn 1s ease;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px;
+            background-color: #3498db;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px;
+            animation: fadeIn 1s ease, slideIn 1s ease;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        div {
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3498db;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        a:hover {
+            color: #21618C;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            width: 100%;
+            text-align: center;
+        }
+
+        #logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Services</h1>
+        <img src="/public/images/logo.jpeg" alt="Logo" id="logo">
+    </header>
+
+    <h2 style="color: #3498db;">User Registration</h2>
+    <form id="loginForm" action="/login" method="post">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <button type="submit" onclick="redirect()">Login</button>
+    </form>
+
+    <div>
+        <a href="/registerUser">Sign Up</a>
+        <a href="/adminLogin">Admin Login</a>
+    </div>
+
+    <footer>
+        &copy; 2023 GD Brand (Gourav Wahane)!
+    </footer>
+
+    <script>
+        function redirect() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
